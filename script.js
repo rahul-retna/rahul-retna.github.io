@@ -313,7 +313,6 @@
 
         window.onresize = event => {
             const scale = Math.round(window.devicePixelRatio * 100)
-            console.warn(`scaled: ${scale}`)
             if(scale != intial_scale) {
                 scaled()
             } else {
