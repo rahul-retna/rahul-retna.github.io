@@ -7,6 +7,7 @@
         const theme = [ ...br, ...br, ...br, ...br, ...br, ...br, ...br, ...br ]
         console.log(oh_nooo, ...theme)
         console.log("%c OH Noooooo... ", "background-color: #FF0000; color: #FFFFFF; font-family: monospace; font-size: 30px")
+        const MAX_SCALE = 140
 
         let intial_scale = 1
         const _ = (query) => document.querySelector(query);
@@ -114,7 +115,7 @@
             `button:hover, button.auto-move:hover {
                 border: 2px solid rgba(0,0,0,1);
             }`,
-            `@media (max-width:750px), (max-height: 400px) {
+            `@media (max-width:600px), (max-height: 400px) {
                 .not-pc {
                     display: flex;
                 }
@@ -291,6 +292,7 @@
         function removeAll(cls) {
             $(cls)
                 .forEach(node => {
+                    node.classList.remove("msg-card")
                     node.parentNode.removeChild(node)
                 })
         }
@@ -299,8 +301,9 @@
             body.removeChild(_(".loading-anim"))
             body.classList.remove("loading")
             intial_scale = Math.round(window.devicePixelRatio * 100)
-            
-            if(intial_scale > 120) {
+            console.log(`intial_scale: ${intial_scale}`)
+            if(intial_scale > MAX_SCALE) {
+                console.log(intial_scale > MAX_SCALE)
                 scaled()
             } else {
                 removeAll(".scaled")
@@ -310,7 +313,10 @@
 
         window.onresize = event => {
             const scale = Math.round(window.devicePixelRatio * 100)
-            if(scale != intial_scale || scale > 120) {
+            console.warn(`scaled: ${scale}`)
+            if(scale != intial_scale || scale > MAX_SCALE) {
+                console.log(scale, intial_scale, MAX_SCALE)
+                console.log(scale != intial_scale, scale > MAX_SCALE)
                 scaled()
             } else {
                 removeAll(".scaled")

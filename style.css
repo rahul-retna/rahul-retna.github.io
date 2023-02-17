@@ -98,7 +98,7 @@ button:hover, button.auto-move:hover {
     border: 2px solid rgba(0,0,0,1);
 }
 
-@media (max-width:750px), (max-height: 400px) {
+@media (max-width:600px), (max-height: 400px) {
     .not-pc {
         display: flex;
     }
