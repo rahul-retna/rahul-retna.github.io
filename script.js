@@ -7,7 +7,7 @@
         const theme = [ ...br, ...br, ...br, ...br, ...br, ...br, ...br, ...br ]
         console.log(oh_nooo, ...theme)
         console.log("%c OH Noooooo... ", "background-color: #FF0000; color: #FFFFFF; font-family: monospace; font-size: 30px")
-        const MAX_SCALE = 140
+        const MAX_SCALE = 220
 
         let intial_scale = 1
         const _ = (query) => document.querySelector(query);
