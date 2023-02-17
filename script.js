@@ -301,7 +301,7 @@
             body.removeChild(_(".loading-anim"))
             body.classList.remove("loading")
             intial_scale = Math.round(window.devicePixelRatio * 100)
-            console.log(`intial_scale: ${intial_scale}`)
+            console.log(`intial_scale: ${intial_scale}, max: ${MAX_SCALE}`)
             if(intial_scale > MAX_SCALE) {
                 console.log(intial_scale > MAX_SCALE)
                 scaled()
