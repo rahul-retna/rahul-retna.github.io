@@ -7,7 +7,7 @@
         const theme = [ ...br, ...br, ...br, ...br, ...br, ...br, ...br, ...br ]
         console.log(oh_nooo, ...theme)
         console.log("%c OH Noooooo... ", "background-color: #FF0000; color: #FFFFFF; font-family: monospace; font-size: 30px")
-        const MAX_SCALE = 220
+        // const MAX_SCALE = 220
 
         let intial_scale = 1
         const _ = (query) => document.querySelector(query);
@@ -207,7 +207,7 @@
         const cssObserver = new MutationObserver(mutations => {
             mutations.forEach(mutationRecord => {
                 if(mutationRecord.target.getAttribute("style") != "") {
-                    console.log("%cTrying to edit CSS🙄? not allowed", "background: #FF0; color: #000")
+                    console.warn("%cTrying to edit CSS🙄? not allowed", "background: #FF0; color: #000")
                     mutationRecord.target.setAttribute("style", "")
                 }
             });
@@ -301,22 +301,20 @@
             body.removeChild(_(".loading-anim"))
             body.classList.remove("loading")
             intial_scale = Math.round(window.devicePixelRatio * 100)
-            console.log(`intial_scale: ${intial_scale}, max: ${MAX_SCALE}`)
-            if(intial_scale > MAX_SCALE) {
-                console.log(intial_scale > MAX_SCALE)
-                scaled()
-            } else {
-                removeAll(".scaled")
-            }
+            // if(intial_scale > MAX_SCALE) {
+            //     console.log(intial_scale > MAX_SCALE)
+            //     scaled()
+            // } else {
+            //     removeAll(".scaled")
+            // }
+            removeAll(".scaled")
 
         }
 
         window.onresize = event => {
             const scale = Math.round(window.devicePixelRatio * 100)
             console.warn(`scaled: ${scale}`)
-            if(scale != intial_scale || scale > MAX_SCALE) {
-                console.log(scale, intial_scale, MAX_SCALE)
-                console.log(scale != intial_scale, scale > MAX_SCALE)
+            if(scale != intial_scale) {
                 scaled()
             } else {
                 removeAll(".scaled")
