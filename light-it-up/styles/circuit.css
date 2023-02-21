@@ -1,0 +1,82 @@
+/* wires */
+.wire {
+    stroke: #000000;
+    stroke-width: 5;
+}
+
+.wire.on {
+    stroke: #FFA000;
+}
+
+
+/* switches */
+.switch {
+    cursor: pointer;
+}
+
+.switch text {
+    font-size: 50px;
+    fill: #000000;
+    user-select: none;
+}
+
+.switch rect {
+    fill: #C8C8C8;
+    stroke: #000000;
+    stroke-width: 2.02;
+}
+
+.switch.on rect {
+    fill: #FFA000;
+}
+
+/* bulbs */
+.bulb .holder-bg {
+    fill: #213B48;
+}
+
+.bulb .screw {
+    fill: #B0BEC5;
+}
+
+.bulb .holder {
+    fill: #546E7A;
+}
+
+.bulb .glow {
+    fill: #C0C0C0;
+}
+
+.bulb .filament {
+    fill: #C0C0C0;
+}
+
+.bulb .glass {
+    fill: #C0C0C0;
+}
+
+.bulb.on .glow {
+    fill: #FFE082;
+}
+
+.bulb.on .filament {
+    fill: #FFFFD0;
+}
+
+.bulb.on .glass {
+    fill: #FFA000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
